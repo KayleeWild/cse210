@@ -4,6 +4,19 @@
     "tasks": [
 
         {
+            "label": "build-sandbox-DiceDistribution",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/sandbox/DiceDistribution/DiceDistribution.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+
+        {
             "label": "build-sandbox-Sandbox",
             "command": "dotnet",
             "type": "process",
