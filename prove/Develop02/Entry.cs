@@ -4,6 +4,7 @@ class Entry
     // variables:
     public string _date;
     public string _prompt;
+    public string _author;
     public string _entryText;
     public List<string> _promptList =
     ["When did I see the Lord's hand today?"
@@ -19,6 +20,7 @@ class Entry
     }
     public void DisplayEntry()
     {
+        Console.WriteLine($"Author: {_author}");
         Console.Write($"Date: {_date}");
         Console.WriteLine($" - Prompt: {_prompt}");
         Console.WriteLine(_entryText);

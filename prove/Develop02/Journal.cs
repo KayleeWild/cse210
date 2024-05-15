@@ -26,6 +26,8 @@ class Journal
     {
         //Create new instance of Entry and display prompt
         Entry myEntry = new();
+        Console.Write("Author of this entry: ");
+        myEntry._author = Console.ReadLine();
         myEntry._prompt = myEntry.PickPrompt();
         Console.WriteLine(myEntry._prompt);
         //Read user response and save it as variable
@@ -60,7 +62,7 @@ class Journal
             //Add necessary elements to the file
             foreach (Entry entry in _entryList)
             {
-                outputFile.WriteLine($"{entry._date}| {entry._prompt}| {entry._entryText}");
+                outputFile.WriteLine($"{entry._date}| {entry._prompt}| {entry._entryText}| {entry._author}");
             }
         }
     }
@@ -68,6 +70,7 @@ class Journal
     {
         Console.WriteLine("What file name would you like this journal loaded from?\n(Please use lowercase, use _ for any spaces, and include .txt at the end)");
         string _loadFileName = Console.ReadLine();
+        _entryList.Clear();
         string[] lines = System.IO.File.ReadAllLines(_loadFileName);
         foreach (string line in lines)
         {
@@ -76,6 +79,7 @@ class Journal
             loadEntry._date = parts[0];
             loadEntry._prompt = parts[1];
             loadEntry._entryText = parts[2];
+            loadEntry._author = parts[3]; 
             _entryList.Add(loadEntry);
         }
     }
