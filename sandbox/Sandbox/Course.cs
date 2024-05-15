@@ -8,7 +8,6 @@ class Course
     // method
     public void Display()
     {
-        
         Console.Write($"{_courseCode} {_className} {_numberOfCredits} {_color}");
     }
 }
