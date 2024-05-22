@@ -1,56 +1,47 @@
-<mxfile host="app.diagrams.net" modified="2024-05-20T18:29:32.984Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="56zYWJ_OyV-c6AfetfEn" version="24.4.4" type="device">
+<mxfile host="app.diagrams.net" modified="2024-05-22T19:17:32.796Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="bUsAwmwkm_YR-xWiou2J" version="24.4.6" type="device">
   <diagram name="Page-1" id="t5WD8PgzdX1QwkMftzV7">
     <mxGraphModel dx="1306" dy="716" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="a3LYbDCO1zSUXNPBdcuV-1" value="Program" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="70" y="120" width="160" height="114" as="geometry" />
+        <mxCell id="a3LYbDCO1zSUXNPBdcuV-5" value="Word" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="640" y="115" width="170" height="250" as="geometry" />
         </mxCell>
-        <mxCell id="a3LYbDCO1zSUXNPBdcuV-2" value="_randomIndex: Random&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="a3LYbDCO1zSUXNPBdcuV-1">
-          <mxGeometry y="26" width="160" height="54" as="geometry" />
+        <mxCell id="a3LYbDCO1zSUXNPBdcuV-6" value="&lt;div&gt;&amp;nbsp;_wordText: private string&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;_letterCount: private in&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;t&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;_isShowing: private boolean&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="a3LYbDCO1zSUXNPBdcuV-5" vertex="1">
+          <mxGeometry y="26" width="170" height="94" as="geometry" />
         </mxCell>
-        <mxCell id="a3LYbDCO1zSUXNPBdcuV-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="a3LYbDCO1zSUXNPBdcuV-1">
-          <mxGeometry y="80" width="160" height="8" as="geometry" />
+        <mxCell id="a3LYbDCO1zSUXNPBdcuV-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="a3LYbDCO1zSUXNPBdcuV-5" vertex="1">
+          <mxGeometry y="120" width="170" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="a3LYbDCO1zSUXNPBdcuV-4" value="GetRandomIndex(): string?" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="a3LYbDCO1zSUXNPBdcuV-1">
-          <mxGeometry y="88" width="160" height="26" as="geometry" />
+        <mxCell id="a3LYbDCO1zSUXNPBdcuV-8" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Word(string word)&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;GetWord(): string&lt;div&gt;Hide(): string&lt;/div&gt;&lt;div&gt;Show(): string&lt;/div&gt;&lt;div&gt;GetRenderedText(): string&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="a3LYbDCO1zSUXNPBdcuV-5" vertex="1">
+          <mxGeometry y="128" width="170" height="122" as="geometry" />
         </mxCell>
-        <mxCell id="a3LYbDCO1zSUXNPBdcuV-5" value="Word" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="650" y="120" width="160" height="154" as="geometry" />
+        <mxCell id="a3LYbDCO1zSUXNPBdcuV-9" value="Scripture" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="115" width="260" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="a3LYbDCO1zSUXNPBdcuV-6" value="&amp;nbsp;_isShowing: boolean&lt;div&gt;&amp;nbsp;_word: string&lt;/div&gt;&lt;div&gt;&amp;nbsp;_dashes: string&lt;/div&gt;&lt;div&gt;&amp;nbsp;_letterCount: int&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="a3LYbDCO1zSUXNPBdcuV-5">
-          <mxGeometry y="26" width="160" height="94" as="geometry" />
+        <mxCell id="a3LYbDCO1zSUXNPBdcuV-10" value="&lt;div&gt;_wholeScripture: string&lt;/div&gt;&lt;div&gt;_reference: string&lt;br&gt;&lt;div&gt;_scriptureText: private List&amp;lt;Word&amp;gt;&lt;/div&gt;&lt;div&gt;_renderedText: List&amp;lt;Word&amp;gt;&lt;/div&gt;&lt;div&gt;_wordCount: int&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="a3LYbDCO1zSUXNPBdcuV-9" vertex="1">
+          <mxGeometry y="26" width="260" height="84" as="geometry" />
         </mxCell>
-        <mxCell id="a3LYbDCO1zSUXNPBdcuV-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="a3LYbDCO1zSUXNPBdcuV-5">
-          <mxGeometry y="120" width="160" height="8" as="geometry" />
+        <mxCell id="a3LYbDCO1zSUXNPBdcuV-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="a3LYbDCO1zSUXNPBdcuV-9" vertex="1">
+          <mxGeometry y="110" width="260" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="a3LYbDCO1zSUXNPBdcuV-8" value="Display(): string&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="a3LYbDCO1zSUXNPBdcuV-5">
-          <mxGeometry y="128" width="160" height="26" as="geometry" />
+        <mxCell id="a3LYbDCO1zSUXNPBdcuV-12" value="&lt;div&gt;Scripture(string scriptureText, string reference)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;GetScripture(): string&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;RenderScripture(): string&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;HideWords(): string&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="a3LYbDCO1zSUXNPBdcuV-9" vertex="1">
+          <mxGeometry y="118" width="260" height="82" as="geometry" />
         </mxCell>
-        <mxCell id="a3LYbDCO1zSUXNPBdcuV-9" value="Scripture" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="265" y="120" width="160" height="134" as="geometry" />
+        <mxCell id="a3LYbDCO1zSUXNPBdcuV-13" value="Reference" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="350" y="115" width="270" height="230" as="geometry" />
         </mxCell>
-        <mxCell id="a3LYbDCO1zSUXNPBdcuV-10" value="_wholeScripture: string&lt;div&gt;_words: List&amp;lt;Word&amp;gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="a3LYbDCO1zSUXNPBdcuV-9">
-          <mxGeometry y="26" width="160" height="74" as="geometry" />
+        <mxCell id="a3LYbDCO1zSUXNPBdcuV-14" value="_book: private string&lt;div&gt;_chapter: private int&lt;/div&gt;&lt;div&gt;_startVerse: private int&lt;/div&gt;&lt;div&gt;_endVerse: private int&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="a3LYbDCO1zSUXNPBdcuV-13" vertex="1">
+          <mxGeometry y="26" width="270" height="84" as="geometry" />
         </mxCell>
-        <mxCell id="a3LYbDCO1zSUXNPBdcuV-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="a3LYbDCO1zSUXNPBdcuV-9">
-          <mxGeometry y="100" width="160" height="8" as="geometry" />
+        <mxCell id="a3LYbDCO1zSUXNPBdcuV-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="a3LYbDCO1zSUXNPBdcuV-13" vertex="1">
+          <mxGeometry y="110" width="270" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="a3LYbDCO1zSUXNPBdcuV-12" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="a3LYbDCO1zSUXNPBdcuV-9">
-          <mxGeometry y="108" width="160" height="26" as="geometry" />
+        <mxCell id="a3LYbDCO1zSUXNPBdcuV-16" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Reference(string book, int chapter, int startVerse)&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Reference(string book, int chapter, int startVerse, int endVerse)&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;GetReference(): string&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="a3LYbDCO1zSUXNPBdcuV-13" vertex="1">
+          <mxGeometry y="118" width="270" height="112" as="geometry" />
         </mxCell>
-        <mxCell id="a3LYbDCO1zSUXNPBdcuV-13" value="Reference" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="460" y="120" width="160" height="144" as="geometry" />
-        </mxCell>
-        <mxCell id="a3LYbDCO1zSUXNPBdcuV-14" value="_book: string&lt;div&gt;_chapter: int&lt;/div&gt;&lt;div&gt;_startVerse: int&lt;/div&gt;&lt;div&gt;_endVerse: int&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="a3LYbDCO1zSUXNPBdcuV-13">
-          <mxGeometry y="26" width="160" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="a3LYbDCO1zSUXNPBdcuV-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="a3LYbDCO1zSUXNPBdcuV-13">
-          <mxGeometry y="110" width="160" height="8" as="geometry" />
-        </mxCell>
-        <mxCell id="a3LYbDCO1zSUXNPBdcuV-16" value="GetReference(): string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="a3LYbDCO1zSUXNPBdcuV-13">
-          <mxGeometry y="118" width="160" height="26" as="geometry" />
+        <mxCell id="l2elnq1AbLvfU9_QUJ94-1" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;The program class will call on elements from the scripture class to perform its functions. The scripture class will draw from the reference class through the GetReference method, and the word class through its various methods. The Scripture class will also be responsible for creating instances of the word class and adding them to a list. This list will be stored in the Scripture class and used in the main program as different words are hidden or shown.&amp;nbsp;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#C4C4C4;spacing=2;" vertex="1" parent="1">
+          <mxGeometry x="170" y="420" width="510" height="220" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
