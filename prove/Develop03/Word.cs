@@ -17,11 +17,6 @@ class Word
         _wordText = hidden;
         _isShowing = false;
     }
-    public string Display()
-    {
-        Console.Write(_wordText);
-        return _wordText;
-    }
     public bool IsShowing()
     {
         return _isShowing;

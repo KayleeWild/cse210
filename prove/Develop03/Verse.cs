@@ -22,7 +22,7 @@ class Verse
             Console.Write($"{lilWord} ");
         }
     }
-    public int GetWordCount()
+    private int GetWordCount()
     {
         int wordCount = _wordList.Count;
         return wordCount;
@@ -65,7 +65,7 @@ class Verse
         // Word hideNSeek = _wordList[index];
         hideNSeek.Hide();
     }
-    public int GetRandomNumber()
+    private int GetRandomNumber()
     {
         Random rando = new();
         int randomIndex = rando.Next(0, GetWordCount());
