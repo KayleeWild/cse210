@@ -2,8 +2,8 @@ using System.IO;
 class Menu
 {
     // variables:
-    public List<Goal> _goalList = new();
-    public int totalPoints = 0;
+    private List<Goal> _goalList = new();
+    private int totalPoints = 0;
     // Methods:
     public void DisplayMenu()
         {

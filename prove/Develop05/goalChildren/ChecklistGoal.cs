@@ -1,9 +1,9 @@
 class ChecklistGoal : Goal
 {
     // variables:
-    int _bonusPoints;
-    int _times; // the number of times the goal must be completed to get bonus points
-    int _timesComplete; // the number of times the goal has been completed.
+    private int _bonusPoints;
+    private int _times; // the number of times the goal must be completed to get bonus points
+    private int _timesComplete; // the number of times the goal has been completed.
     // constructor:
     public ChecklistGoal(string name, string description, int points, int area, int bonusPoints, int times, int timesComplete) : base (name, description, points, area)
     {

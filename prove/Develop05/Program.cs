@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         Console.Clear();
-        // variables:
+        // variables/objects:
         Menu session = new();
         int menuOption = 0;
         // methods:
