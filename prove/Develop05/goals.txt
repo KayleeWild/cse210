@@ -1,0 +1,4 @@
+545
+ChecklistGoal:finish hw|finish it|5|1|500|3|3
+SimpleGoal:eat|eat pizza|10|4|True
+EternalGoal:wake up|wake up on time|20|2
