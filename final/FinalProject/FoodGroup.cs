@@ -2,14 +2,12 @@ class FoodGroup
 {
     // variables:
     protected int _minServings;
-    protected int _consumedServings;
-    protected bool _isComplete;
+    protected int _consumedServings = 0;
+    protected bool _isComplete = false;
     // constructor:
     public FoodGroup(int servings)
     {
         _minServings = servings;
-        _consumedServings = 0;
-        _isComplete = false;
     }
     public virtual void RecordFoodGroup(int servings)
     {
@@ -21,7 +19,7 @@ class FoodGroup
             _isComplete = true;
         }
     }
-    public virtual void DisplayRecord()
+    public virtual void DisplayRecord() //used for the list option in menu
     {
         string metness;
         if (_isComplete == true)
@@ -34,8 +32,8 @@ class FoodGroup
 /*maybe later you can figure out how to do little icons with the different food groups*/
         Console.WriteLine($"{_consumedServings}/{_minServings} food groups, requirements {metness} for today.");
     }
-    public virtual void GetStringRepresentation()
+    public virtual void GetStringRepresentation() //used for the save option in menu
     {
-        Console.WriteLine($"FoodGroup:{_consumedServings}");
+        Console.WriteLine($"FoodGroup:{_minServings}:{_consumedServings}");
     }
 }
