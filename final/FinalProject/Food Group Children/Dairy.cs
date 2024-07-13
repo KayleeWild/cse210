@@ -20,8 +20,8 @@ class Dairy : FoodGroup
         }
         Console.WriteLine($"{_consumedServings}/{_minServings} cups of dairy, requirements {metness} for today.");
     }
-    public override string GetStringRepresentation() //used for the save option in menu
-    {
-        return $"Dairy:{_minServings}:{_consumedServings}";
-    }
+    // public override string GetStringRepresentation() //used for the save option in menu
+    // {
+    //     return $"Dairy:{_minServings}:{_consumedServings}";
+    // }
 }

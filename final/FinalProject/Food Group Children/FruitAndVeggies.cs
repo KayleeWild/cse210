@@ -20,8 +20,8 @@ class FruitAndVeggies : FoodGroup
         }
         Console.WriteLine($"{_consumedServings}/{_minServings} cups of fruits and/or veggies, requirements {metness} for today.");
     }
-    public override string GetStringRepresentation() //used for the save option in menu
-    {
-        return $"Fruit and Veggies:{_minServings}:{_consumedServings}";
-    }
+    // public override string GetStringRepresentation() //used for the save option in menu
+    // {
+    //     return $"Fruit and Veggies:{_minServings}:{_consumedServings}";
+    // }
 }

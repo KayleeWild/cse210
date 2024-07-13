@@ -3,7 +3,7 @@ class BadgeGallery
     // variables:
     // ascii representations of the badge, prolly animals
     private string _dolphin = 
-    "                ;'-.\n" + 
+    "            ;'-.\n" + 
     "`;-._        )  '---.._\n" +
     "  >  `-.__.-'          `'.__\n" +
     " /_.-'-._         _,   ^ ---)\n" +

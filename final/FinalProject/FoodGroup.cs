@@ -1,7 +1,7 @@
 class FoodGroup
 {
     // variables:
-    protected int _minServings;
+    protected int _minServings = 0;
     protected int _consumedServings = 0;
     protected bool _isComplete = false;
     // constructor:
@@ -16,6 +16,14 @@ class FoodGroup
     public int GetMinServings()
     {
         return _minServings;
+    }
+    public void SetConsumedServings(int servings)
+    {
+        _consumedServings = servings;
+    }
+    public int GetConsumedServings()
+    {
+        return _consumedServings;
     }
     public virtual void RecordFoodGroup(int servings)
     {
@@ -40,8 +48,8 @@ class FoodGroup
 /*maybe later you can figure out how to do little icons with the different food groups*/
         Console.WriteLine($"{_consumedServings}/{_minServings} food groups, requirements {metness} for today.");
     }
-    public virtual string GetStringRepresentation() //used for the save option in menu
-    {
-        return $"FoodGroup:{_minServings}:{_consumedServings}";
-    }
+    // public virtual string GetStringRepresentation() //used for the save option in menu
+    // {
+    //     return $"FoodGroup:{_minServings}:{_consumedServings}";
+    // }
 }
