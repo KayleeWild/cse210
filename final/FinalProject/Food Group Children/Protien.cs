@@ -3,10 +3,10 @@ class Protein : FoodGroup
     // variables:
 
     // constructor:
-    public Protein(int servings) : base(servings)
-    {
+    // public Protein(int servings) : base(servings)
+    // {
 
-    }
+    // }
     // methods:
     // public override void RecordFoodGroup(int servings)
     // {
@@ -31,9 +31,9 @@ class Protein : FoodGroup
 /*maybe later you can figure out how to do little icons with the different food groups*/
         Console.WriteLine($"{_consumedServings}/{_minServings} oz. of protein, requirements {metness} for today.");
     }
-    public override void GetStringRepresentation() //used for the save option in menu
+    public override string GetStringRepresentation() //used for the save option in menu
     {
-        Console.WriteLine($"Protein:{_consumedServings}");
+        return $"Protein:{_minServings}:{_consumedServings}";
     }
 
 }

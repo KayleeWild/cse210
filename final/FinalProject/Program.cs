@@ -4,11 +4,20 @@ class Program
 {
     static void Main(string[] args)
     {
-        // variables
-        List<FoodGroup> _foodList = new();
-        List<Badge> _badgeList = new(); //All the badges possible
-        List<Badge> _userBadgeList = new(); //All the badges earned by the user
+        // variables:
+        int _badgeIndex = 0; // All numbers up to this index in the badge gallery have been earned by the user.
+        // List<Badge> _badgeList = new(); //All the badges possible
+        // List<Badge> _userBadgeList = new(); //All the badges earned by the user
         int _streak = 0;
+        Menu session = new();
+        FruitAndVeggies myFruitsVeg = new();
+        Grain myGrain = new();
+        Protein myProtein = new();
+        Dairy myDairy = new();
+        Treats myTreat = new();
+        FoodGroup[] _foodList = [myFruitsVeg, myGrain, myProtein, myDairy, myTreat];
+        BadgeGallery gallery = new();
+
 
         // program:
         Console.Clear();
@@ -21,41 +30,41 @@ class Program
             Console.WriteLine("\nTo use this application effectively, please visit https://www.myplate.gov/myplate-plan and determine the servings of each food group you'll need to aim for each day.\n1. Click the blue start button on the left side of the page.\n2. Enter your information\n3. Based on the recommended calories it returns, click the corresponding link in the table below. There you will find the serving sizes recommended for you.");
             Console.WriteLine("Press [Enter] when finished to proceed");
             Console.ReadLine();
+            // Ask for all the serving requrements needed
+            Console.WriteLine("You will now enter in all your serving requirements. For each group, round your answer to the nearest cup or ounce, respectively.");
+            Console.WriteLine("Add your fruit and veggie requirements and enter the total in cups: ");
+            int fruitsveg = Int32.Parse(Console.ReadLine());
+            myFruitsVeg.SetMinServings(fruitsveg);
+
+            Console.WriteLine("What is your grain requirement in ounces?");
+            int grains = Int32.Parse(Console.ReadLine());
+            myGrain.SetMinServings(grains);
+            
+            Console.WriteLine("What is your protien requirement in ounces?");
+            int protein = Int32.Parse(Console.ReadLine());
+            myProtein.SetMinServings(protein);
+            
+            Console.WriteLine("What is your dairy requirement in cups?");
+            int dairy = Int32.Parse(Console.ReadLine());
+            myDairy.SetMinServings(dairy);
+////Write something about treats later
+            Console.WriteLine("Treats"); 
+            int treat = Int32.Parse(Console.ReadLine());
+            myTreat.SetMinServings(treat);
+        } else if (response == "N")
+        {
+            Console.Clear();
+                Console.WriteLine("What is the name of the file you'd like to load your record from? (make sure to include the .txt suffix)");
+                string filename = Console.ReadLine();
+                session.LoadProgress(filename, _foodList);
+                Console.Clear();
+                Console.WriteLine($"{filename} loaded successfully!\n");
         }
-        // Ask for all the serving requrements needed
-        Console.WriteLine("You will now enter in all your serving requirements. For each group, round your answer to the nearest cup or ounce, respectively.");
-        Console.WriteLine("Add your fruit and veggie requirements and enter the total in cups: ");
-        int fruitsveg = Int32.Parse(Console.ReadLine());
-        FruitAndVeggies myFruitsVeg = new(fruitsveg);
-        _foodList.Add(myFruitsVeg);
-
-        Console.WriteLine("What is your grain requirement in ounces?");
-        int grains = Int32.Parse(Console.ReadLine());
-        Grain myGrain = new(grains);
-        _foodList.Add(myGrain);
-        
-        Console.WriteLine("What is your protien requirement in ounces?");
-        int protein = Int32.Parse(Console.ReadLine());
-        Protein myProtein = new(protein);
-        _foodList.Add(myProtein);
-        
-        Console.WriteLine("What is your dairy requirement in cups?");
-        int dairy = Int32.Parse(Console.ReadLine());
-        Dairy myDairy = new(dairy);
-        _foodList.Add(myDairy);
-        
-        Console.WriteLine("Treats"); ////Write something about treats later
-        int treat = Int32.Parse(Console.ReadLine());
-        Treats myTreat = new(treat);
-        _foodList.Add(myTreat);
-
+         // menu loop
         Console.Clear();
         Console.WriteLine("Thank you. Now please type in the number corresponding to your menu choice...");
-        
-        // menu loop
-        Menu session = new();
         int menuOption = 0;
-        while (menuOption != 6)
+        while (new int[] {1, 2, 3}.Contains(menuOption))
         {
             session.DisplayMenu();
             menuOption = Int32.Parse(Console.ReadLine());
@@ -75,58 +84,61 @@ class Program
                 Console.Write("How many servings did you eat? ");
                 int servings = Int32.Parse(Console.ReadLine());
 /* change the arguments/parameters to be the food list and iterate through it with a for each loop*/
-                session.RecordFood(food, servings, myFruitsVeg, myGrain, myProtein, myDairy, myTreat);
-                // if (food == 1)
-                // {
-                //     myFruitsVeg.RecordFoodGroup(servings);
-                // } else if (food == 2)
-                // {
-                //     myGrain.RecordFoodGroup(servings);
-                // } else if (food == 3)
-                // {
-                //     myProtein.RecordFoodGroup(servings);
-                // } else if (food == 4)
-                // {
-                //     myDairy.RecordFoodGroup(servings);
-                // } else if (food == 5)
-                // {
-                //     myTreat.RecordFoodGroup(servings);
-                // }
+                // session.RecordFood(food, servings, myFruitsVeg, myGrain, myProtein, myDairy, myTreat);
+                if (food == 1)
+                {
+                    myFruitsVeg.RecordFoodGroup(servings);
+                } else if (food == 2)
+                {
+                    myGrain.RecordFoodGroup(servings);
+                } else if (food == 3)
+                {
+                    myProtein.RecordFoodGroup(servings);
+                } else if (food == 4)
+                {
+                    myDairy.RecordFoodGroup(servings);
+                } else if (food == 5)
+                {
+                    myTreat.RecordFoodGroup(servings);
+                }
                 Console.Clear();
                 Console.WriteLine("Food has been recorded!");
             } else if (menuOption == 2)
             {
                 Console.Clear();
-                session.ListDailyRecord(myFruitsVeg, myGrain, myProtein, myDairy, myTreat);
+                session.ListDailyRecord(_foodList);
                 Console.WriteLine();
             } else if (menuOption == 3)
             {
                 Console.Clear();
-                Console.Write("What is the name of the file you'd like your record saved under? (use underscores for spaces and include .txt at the end)");
+                Console.WriteLine("Here are the badges you've earned:");
+                gallery.DisplayEarnedBadges();
+                // foreach (Badge badge in _userBadgeList)
+                // {
+                //     string badgeString = badge.GetBadge();
+                //     Console.WriteLine(badgeString);
+                // }
+                Console.WriteLine("Earn more by increasing your streak or completing food group challenges.");
+            } 
+            // } else if (menuOption == 4)
+            // {
+            //     Console.Clear();
+            //     Console.WriteLine("What is the name of the file you'd like to load your record from? (make sure to include the .txt suffix)");
+            //     string filename = Console.ReadLine();
+            //     session.LoadRecord(filename, _foodList);
+            //     Console.Clear();
+            //     Console.WriteLine($"{filename} loaded successfully!\n");
+        }
+        Console.Clear();
+        if (menuOption == 4)
+            {
+                Console.Clear();
+                Console.WriteLine("What is the name of the file you'd like your record saved under? (use underscores for spaces and include .txt at the end)");
                 string filename = Console.ReadLine();
-                session.SaveRecord(filename);
+                session.SaveProgress(filename, _streak, _badgeIndex, _foodList);
                 Console.Clear();
                 Console.WriteLine($"{filename} saved to local device!\n");
-            } else if (menuOption == 4)
-            {
-                Console.Clear();
-                Console.Write("What is the name of the file you'd like to load your record from? (make sure to include the .txt suffix)");
-                string filename = Console.ReadLine();
-                session.LoadRecord(filename);
-                Console.Clear();
-                Console.WriteLine($"{filename} loaded successfully!\n");
-            } else if (menuOption == 5)
-            {
-                Console.Clear();
-                Console.WriteLine("Here are the badges you've earned:");
-                foreach (Badge badge in _userBadgeList)
-                {
-                    string badgeString = badge.GetBadge();
-                    Console.WriteLine(badgeString);
-                }
-                Console.WriteLine("Earn more by increasing your streak or completing food group challenges.");
             }
-        }
         Console.Write("Thanks for eating right! Have a happy day :)");
     }
 }

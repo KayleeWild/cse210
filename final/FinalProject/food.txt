@@ -1,0 +1,6 @@
+Food Group:servings requirement:amount eaten
+Fruit and Veggies:5:1
+Grain:5:2
+Protein:5:3
+Dairy:5:5
+Treats:5:4
