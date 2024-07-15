@@ -48,6 +48,10 @@ class FoodGroup
 /*maybe later you can figure out how to do little icons with the different food groups*/
         Console.WriteLine($"{_consumedServings}/{_minServings} food groups, requirements {metness} for today.");
     }
+    public virtual int ExtraBonus()
+    {
+        return 0;
+    }
     // public virtual string GetStringRepresentation() //used for the save option in menu
     // {
     //     return $"FoodGroup:{_minServings}:{_consumedServings}";

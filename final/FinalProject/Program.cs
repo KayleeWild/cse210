@@ -5,10 +5,11 @@ class Program
     static void Main(string[] args)
     {
         // variables:
-        int _badgeIndex = 0; // All numbers up to this index in the badge gallery have been earned by the user.
-        // List<Badge> _badgeList = new(); //All the badges possible
-        // List<Badge> _userBadgeList = new(); //All the badges earned by the user
+        int _badgeCount = 0; // All numbers up to this index in the badge gallery have been earned by the user.
         int _streak = 0;
+        int _fruitsAndVeggiesBonus = 0;
+        int _grainBonus = 0;
+        int _proteinBonus = 0;
         Menu session = new();
         FruitAndVeggies myFruitsVeg = new();
         Grain myGrain = new();
@@ -57,7 +58,9 @@ class Program
             Console.Clear();
             // Console.WriteLine("What is the name of the file you'd like to load your record from? (make sure to include the .txt suffix)");
             // string filename = Console.ReadLine();
-            _streak = session.LoadProgress("food.txt", _foodList);
+            int[] results = session.LoadProgress("food.txt", _foodList);
+            _streak = results[0];
+            _badgeCount = results[1];
             Console.Clear();
             Console.WriteLine($"File loaded successfully!\n");
         }
@@ -117,13 +120,20 @@ class Program
                 // Display all badges user has ever earned
                 Console.Clear();
                 Console.WriteLine("Here are the badges you've earned:");
-                gallery.DisplayEarnedBadges();
-                // foreach (Badge badge in _userBadgeList)
-                // {
-                //     string badgeString = badge.GetBadge();
-                //     Console.WriteLine(badgeString);
-                // }
-                Console.WriteLine("Earn more by increasing your streak or completing food group challenges.");
+                string stringy = new string('-', Console.WindowWidth);
+                string[] wholeList = gallery.GetBadgesList();
+                int count = 0;
+                for (int i = 1; i <= _badgeCount; i++)
+                {
+                    Console.WriteLine(stringy);
+                    Console.WriteLine($"Badge #{i}:\n");
+                    Console.WriteLine(wholeList[i - 1]);
+                    Console.WriteLine();
+                    count ++;
+                }
+                Console.WriteLine(stringy);
+                Console.WriteLine($"\nYou have earned {count} badges!\n");
+                Console.WriteLine("Earn more by increasing your streak, meeting goals, or completing food group challenges.");
             } else if (menuOption == 4)
             {
                 Console.Clear();
@@ -146,7 +156,7 @@ class Program
                 Console.Clear();
                 // Console.WriteLine("What is the name of the file you'd like your progress saved under? (use underscores for spaces and include .txt at the end)");
                 // string filename = Console.ReadLine();
-                session.SaveProgress("food.txt", _streak, _badgeIndex, _foodList);
+                session.SaveProgress("food.txt", _streak, _badgeCount, _foodList);
                 Console.Clear();
                 Console.WriteLine($"File saved to local device!\n");
             }

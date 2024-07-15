@@ -16,25 +16,6 @@ class Menu
             "Select a choice from the menu: "
             );
     }
-    // public void RecordFood(int food, int servings, FruitAndVeggies f, Grain g, Protein p, Dairy d, Treats t)
-    // {
-    //     if (food == 1)
-    //     {
-    //         f.RecordFoodGroup(servings);
-    //     } else if (food == 2)
-    //     {
-    //         g.RecordFoodGroup(servings);
-    //     } else if (food == 3)
-    //     {
-    //         p.RecordFoodGroup(servings);
-    //     } else if (food == 4)
-    //     {
-    //         d.RecordFoodGroup(servings);
-    //     } else if (food == 5)
-    //     {
-    //         t.RecordFoodGroup(servings);
-    //     }
-    // }
     public void ListDailyRecord(FoodGroup[] foodGroups)
     {
         foreach (FoodGroup f in foodGroups)
@@ -42,14 +23,14 @@ class Menu
             f.DisplayRecord();
         }
     }
-    public void SaveProgress(string filename, int streak, int badgeIndex, FoodGroup[] foodList)
+    public void SaveProgress(string filename, int streak, int badgeCount, FoodGroup[] foodList)
     {
         using (StreamWriter outputFile = new(filename))
         {
             // First line is date saved
             outputFile.WriteLine(DateTime.Now.ToString("MM/dd/yyyy"));
             // Second line is streak, third is number of badges earned
-            outputFile.WriteLine($"{streak}\n{badgeIndex}");
+            outputFile.WriteLine($"{streak}\n{badgeCount}");
             // Next lines are the serving requirements for each food group
             foreach (FoodGroup foodGroup in foodList)
             {
@@ -61,13 +42,13 @@ class Menu
             }
         }
     }
-    public int LoadProgress(string filename, FoodGroup[] foodList)
+    public int[] LoadProgress(string filename, FoodGroup[] foodList)
     {
         // load the file into an array
         string[] lines = System.IO.File.ReadAllLines(filename);
         string date = lines[0];
         int streak = Int32.Parse(lines[1]);
-        int badgeIndex = Int32.Parse(lines[2]);
+        int badgeCount = Int32.Parse(lines[2]);
         // set the min servings for each food group
         for (int i = 3; i < 8; i++ )
         {
@@ -84,6 +65,6 @@ class Menu
         {
             streak ++;
         }
-        return streak;
+        return [streak, badgeCount];
     }
 }
