@@ -22,7 +22,7 @@ class Program
 
         // program:
         Console.Clear();
-        Console.Write("Is this your first time using the app? (Y/N)");
+        Console.Write("Is this your first time using the app? (Y/N) ");
         string response = Console.ReadLine().ToUpper();
         // Disclaimer
         if (response == "Y")
