@@ -11,7 +11,6 @@ class Protein : FoodGroup
         {
             metness = "not met";
         }
-/*maybe later you can figure out how to do little icons with the different food groups*/
         Console.WriteLine($"{_consumedServings}/{_minServings} oz. of protein, requirements {metness} for today.");
     }
     public override int ExtraBonus()
