@@ -138,6 +138,84 @@ class BadgeGallery
     (oo)_____/ 
        WW  WW
     ";
+    private string _moose = 
+    @"
+     ___            ___
+    /   \          /   \
+    \_   \        /  __/
+     _\   \      /  /__
+     \___  \____/   __/
+        \_       _/
+          | @ @  \_
+          |
+        _/     /\
+       /o)  (o/\ \_
+       \_____/ /
+         \____/
+    ";
+    private string _rabbit = 
+    @"
+             ,\
+             \\\,_
+              \` ,\
+         __,.-` =__)
+       .`        )
+    ,_/   ,    \/\_
+    \_|    )_-\ \_-`
+       `-----` `--`
+    ";
+    private string _alligator = 
+    @"
+               .-._   _ _ _ _ _ _ _ _
+    .-''-.__.-'00  '-' ' ' ' ' ' ' ' '-.
+    '.___ '    .   .--_'-' '-' '-' _'-' '._
+     V: V 'vv-'   '_   '.       .'  _..' '.'.
+       '=.____.=_.--'   :_.__.__:_   '.   : :
+              (((____.-'        '-.  /   : :
+                                (((-'\ .' /
+                              _____..'  .'
+                            '-._____.-'
+    ";
+    private string _snake = 
+    @"
+                 ____
+                / . .\
+                \  ---<
+                 \  /
+       __________/ /
+    -=:___________/
+    ";
+    private string _mouse = 
+    @"
+     _    _
+    (o)__(o)   
+     \ .. /  
+     ==\/==   
+     (m  m)  
+    m(____)m
+    ";
+    private string _rhino = 
+    @"
+                  _                 __                 
+          __.--**` `**--...__..--**`  `*-.            
+        .'                                `-.         
+      .'                         _           \        
+    /                         .'        .    \   _._ 
+    :                         :          :`*.  :-'.' ;
+    ;    `                    ;          `.) \   /.-' 
+    :     `                             ; ' -*   ;    
+          :.    \           :       :  :        :    
+     ;     ; `.   `.         ;     ` |  '             
+     |         `.            `. -*`*\; /        :     
+     |    :     /`-.           `.    \/`.'  _    `.   
+     :    ;    :    `*-.__.-*```:`.   \ ;  'o` `. /   
+          ;   ;                ;  \   ;:       ;:   ,/
+      |  | |                       /`  | ,      `*-*'/ 
+      `  : :  :                /  /    | : .    ._.-'  
+       \  \ ,  \              :   `.   :  \ \   .'     
+        :  *:   ;             :    |`*-'   `*+-*       
+        `**-*```               *---*
+    ";
     // methods:
     public string[] GetBadgesList()
     {
@@ -145,6 +223,7 @@ class BadgeGallery
         /*make it so there is a list of badges to choose from here and be able to return the string based on the function parameters*/
         return [_elephant, _turtle, _dolphin, _bear, _eagle,
                  _camel, _owl, _yak, _lion, _cow,
-                 _dog, _whale, _snail, _pig];
+                 _dog, _whale, _snail, _pig, _moose,
+                 _rabbit, _alligator, _snake, _mouse, _rhino];
     }
 }

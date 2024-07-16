@@ -70,6 +70,10 @@ class Menu
         } else // otherwise the consumed servings are reset and the streak is increased.
         {
             streak ++;
+            if (new int[] {2, 5, 10, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 365}.Contains(streak))
+            {
+                badgeCount ++;
+            }
         }
         int fruitsAndVeggiesBonus = Int32.Parse(lines[13]);
         int grainBonus = Int32.Parse(lines[14]);

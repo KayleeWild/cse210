@@ -169,12 +169,10 @@ class Program
                 Console.WriteLine("How do I earn more badges?");
                 Console.WriteLine(stringy);
                 Console.WriteLine("1. Streaks.\nStreaks are built by coming back and logging your food often. Each new day that you come back to log your food, your streak increases by one. As you reach milestones of " + 
-                "2, 5, 10, 25, 50, and 100 days, you will be awarded new badges. Streaks will not reset if you miss a day. They simply keep track of your total days logged.");
+                "2, 5, 10, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, and 365 days, you will be awarded new badges. Streaks will not reset if you miss a day. They simply keep track of your total days logged.");
                 Console.WriteLine("2. Make half your plate fruits and veggies.\nThe first time you lot fruits and veggies as half of your plate, you will earn a badge. *");
                 Console.WriteLine("3. Make half your grains whole grains.\nThe first time you log that at least half your grains were whole grains, you will earn a badge. *");
                 Console.WriteLine("4. Eat a variety of protein.\nThe first time you log proteins that you determine to be of a good variety, you will earn a badge. *");
-                Console.WriteLine("5. Meet your goals!\nEach time you meet all your requirements/goals in a food group, you get closer to earning another badge. The milestones for this method are " +
-                "5, 10, 15, 20, and 25 goals met.");
                 Console.WriteLine("\n(Badges marked with a * can only be earned once, but it is still recommended to follow the guidelines recommended in them for better overall health.)");
             }
         } while (new int[] {1, 2, 3, 4}.Contains(menuOption));
