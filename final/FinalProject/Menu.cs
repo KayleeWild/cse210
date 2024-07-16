@@ -1,7 +1,7 @@
 class Menu
 {
     // variables:
-    string _filename = "food.txt";
+    private string _filename = "food.txt";
     // methods:
     public void DisplayMenu()
     {
