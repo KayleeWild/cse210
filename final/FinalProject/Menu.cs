@@ -23,7 +23,7 @@ class Menu
             f.DisplayRecord();
         }
     }
-    public void SaveProgress(int streak, int badgeCount, FoodGroup[] foodList, List<int> bonusList)
+    public void SaveProgress(int streak, int badgeCount, FoodGroup[] foodList, int[] bonusList)
     {
         using (StreamWriter outputFile = new(_filename))
         {

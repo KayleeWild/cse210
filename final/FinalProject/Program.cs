@@ -8,9 +8,8 @@ class Program
         int _badgeCount = 0; // All numbers up to this index in the badge gallery have been earned by the user.
         int _streak = 0;
         int _fruitsAndVeggiesBonus = 0;
-        int _grainBonus = 0;
         int _proteinBonus = 0;
-        List<int> _bonusList = [_fruitsAndVeggiesBonus, _grainBonus, _proteinBonus];
+        int _grainBonus = 0;
         Menu session = new();
         FruitAndVeggies myFruitsVeg = new();
         Grain myGrain = new();
@@ -97,9 +96,25 @@ class Program
                 if (food == 1)
                 {
                     myFruitsVeg.RecordFoodGroup(servings);
+                    if (_fruitsAndVeggiesBonus == 0)
+                    {
+                        _fruitsAndVeggiesBonus = myFruitsVeg.ExtraBonus();
+                        _badgeCount ++;
+                    } else 
+                    {
+                        Console.WriteLine("Bonus fruits and veggies badge has already been earned, but please continue to strive for half your plate to be fruits or veggies.");
+                    }
                 } else if (food == 2)
                 {
                     myGrain.RecordFoodGroup(servings);
+                    if (_grainBonus == 0)
+                    {
+                        _grainBonus = myGrain.ExtraBonus();
+                        _badgeCount ++;
+                    } else 
+                    {
+                        Console.WriteLine("Bonus grain badge has already been earned, but please continue to strive for at least half your grains to be whole grains.");
+                    }
                 } else if (food == 3)
                 {
                     myProtein.RecordFoodGroup(servings);
@@ -169,6 +184,7 @@ class Program
                 Console.Clear();
                 // Console.WriteLine("What is the name of the file you'd like your progress saved under? (use underscores for spaces and include .txt at the end)");
                 // string filename = Console.ReadLine();
+                int[] _bonusList = [_fruitsAndVeggiesBonus, _grainBonus, _proteinBonus];
                 session.SaveProgress(_streak, _badgeCount, _foodList, _bonusList);
                 Console.Clear();
                 Console.WriteLine($"File saved to local device!\n");
