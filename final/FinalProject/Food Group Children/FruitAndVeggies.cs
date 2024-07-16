@@ -1,12 +1,5 @@
 class FruitAndVeggies : FoodGroup
 {
-    // variables:
-
-    // constructor:
-    // public FruitAndVeggies(int servings) : base(servings)
-    // {
-
-    // }
     // methods:
     public override void DisplayRecord() //used for the list option in menu
     {

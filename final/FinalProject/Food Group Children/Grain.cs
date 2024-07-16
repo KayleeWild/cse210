@@ -1,12 +1,5 @@
 class Grain : FoodGroup
 {
-    // variables:
-
-    // constructor:
-    // public Grain(int servings) : base(servings)
-    // {
-
-    // }
     // methods:
     public override void DisplayRecord() //used for the list option in menu
     {

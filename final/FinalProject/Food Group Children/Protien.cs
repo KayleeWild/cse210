@@ -1,12 +1,5 @@
 class Protein : FoodGroup
 {
-    // variables:
-
-    // constructor:
-    // public Protein(int servings) : base(servings)
-    // {
-
-    // }
     // methods:
     public override void DisplayRecord() //used for the list option in menu
     {

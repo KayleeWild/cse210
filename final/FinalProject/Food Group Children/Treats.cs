@@ -1,12 +1,5 @@
 class Treats : FoodGroup
 {
-    // variables:
-
-    // constructor:
-    // public Treats(int servings) : base(servings)
-    // {
-
-    // }
     // methods:
     public override void RecordFoodGroup(int servings)
     {
@@ -30,8 +23,4 @@ class Treats : FoodGroup
         }
         Console.WriteLine($"{_consumedServings}/{_minServings} treats, goal {metness} for today.");
     }
-    // public override string GetStringRepresentation() //used for the save option in menu
-    // {
-    //     return $"Treats:{_minServings}:{_consumedServings}";
-    // }
 }

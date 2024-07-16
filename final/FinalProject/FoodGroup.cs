@@ -52,8 +52,4 @@ class FoodGroup
     {
         return 0;
     }
-    // public virtual string GetStringRepresentation() //used for the save option in menu
-    // {
-    //     return $"FoodGroup:{_minServings}:{_consumedServings}";
-    // }
 }
