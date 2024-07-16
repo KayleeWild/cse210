@@ -4,11 +4,7 @@ class FoodGroup
     protected int _minServings = 0;
     protected int _consumedServings = 0;
     protected bool _isComplete = false;
-    // constructor:
-    // public FoodGroup(int servings)
-    // {
-    //     _minServings = servings;
-    // }
+    // methods:
     public void SetMinServings(int servings)
     {
         _minServings = servings;
