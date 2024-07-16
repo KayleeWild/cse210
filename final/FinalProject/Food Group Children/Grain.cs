@@ -20,8 +20,16 @@ class Grain : FoodGroup
         }
         Console.WriteLine($"{_consumedServings}/{_minServings} oz. of grains, requirements {metness} for today.");
     }
-    // public override string GetStringRepresentation() //used for the save option in menu
-    // {
-    //     return $"Grain:{_minServings}:{_consumedServings}";
-    // }
+    public override int ExtraBonus()
+    {
+        Console.WriteLine("Think about the grains you ate today. Were at least half of them whole grains? Y/N");
+        string answer = Console.ReadLine().ToUpper();
+        if (answer == "Y")
+        {
+            return 1;
+        } else 
+        {
+            return 0;
+        }
+    }
 }
