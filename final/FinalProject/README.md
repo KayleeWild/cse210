@@ -10,7 +10,11 @@ The app takes care of saving and loading your progress without prompting you for
 6. Protein Minimum Servings
 7. Dairy Minimum Servings
 8. Treats Goal
-9.-13. Number Of Consumed Servings For Each Food Group, In The Same Order As Before
+9. Fruits/Veggies Consumed Servings
+10. Grain Consumed Servings
+11. Protein Consumed Servings
+12. Dairy Consumed Servings
+13. Treats Consumed Servings
 14. 0 = Fruits/Veggies Bonus Not Complete, 1 = Complete
 15. 0 = Grain Bonus Not Complete, 1 = Complete
 16. 0 = Protein Bonus Not Complete, 1 = Complete
