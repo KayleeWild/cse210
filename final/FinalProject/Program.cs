@@ -10,6 +10,7 @@ class Program
         int _fruitsAndVeggiesBonus = 0;
         int _grainBonus = 0;
         int _proteinBonus = 0;
+        List<int> _bonusList = [_fruitsAndVeggiesBonus, _grainBonus, _proteinBonus];
         Menu session = new();
         FruitAndVeggies myFruitsVeg = new();
         Grain myGrain = new();
@@ -58,9 +59,12 @@ class Program
             Console.Clear();
             // Console.WriteLine("What is the name of the file you'd like to load your record from? (make sure to include the .txt suffix)");
             // string filename = Console.ReadLine();
-            int[] results = session.LoadProgress("food.txt", _foodList);
+            int[] results = session.LoadProgress(_foodList);
             _streak = results[0];
             _badgeCount = results[1];
+            _fruitsAndVeggiesBonus = results[2];
+            _grainBonus = results[3];
+            _proteinBonus = results[4];
             Console.Clear();
             Console.WriteLine($"File loaded successfully!\n");
         }
@@ -89,6 +93,7 @@ class Program
                 // ask user how many servings they ate and store in object depending on answer to previous prompt
                 Console.Write("How many servings did you eat? ");
                 int servings = Int32.Parse(Console.ReadLine());
+                Console.Clear();
                 if (food == 1)
                 {
                     myFruitsVeg.RecordFoodGroup(servings);
@@ -98,6 +103,15 @@ class Program
                 } else if (food == 3)
                 {
                     myProtein.RecordFoodGroup(servings);
+                    if (_proteinBonus == 0)
+                    {
+                        _proteinBonus = myProtein.ExtraBonus();
+                        _badgeCount ++;
+                    } else 
+                    {
+                        Console.WriteLine("Bonus protein badge has already been earned, but please continue to eat a good variety of protein.");
+                    }
+                    
                 } else if (food == 4)
                 {
                     myDairy.RecordFoodGroup(servings);
@@ -106,7 +120,6 @@ class Program
                     myTreat.RecordFoodGroup(servings);
                 }
                 // success message
-                Console.Clear();
                 Console.WriteLine("Food has been recorded!");
             } else if (menuOption == 2)
             {
@@ -156,7 +169,7 @@ class Program
                 Console.Clear();
                 // Console.WriteLine("What is the name of the file you'd like your progress saved under? (use underscores for spaces and include .txt at the end)");
                 // string filename = Console.ReadLine();
-                session.SaveProgress("food.txt", _streak, _badgeCount, _foodList);
+                session.SaveProgress(_streak, _badgeCount, _foodList, _bonusList);
                 Console.Clear();
                 Console.WriteLine($"File saved to local device!\n");
             }

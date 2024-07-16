@@ -1,7 +1,7 @@
 class Menu
 {
     // variables:
-    
+    string _filename = "food.txt";
     // methods:
     public void DisplayMenu()
     {
@@ -23,29 +23,35 @@ class Menu
             f.DisplayRecord();
         }
     }
-    public void SaveProgress(string filename, int streak, int badgeCount, FoodGroup[] foodList)
+    public void SaveProgress(int streak, int badgeCount, FoodGroup[] foodList, List<int> bonusList)
     {
-        using (StreamWriter outputFile = new(filename))
+        using (StreamWriter outputFile = new(_filename))
         {
             // First line is date saved
             outputFile.WriteLine(DateTime.Now.ToString("MM/dd/yyyy"));
             // Second line is streak, third is number of badges earned
             outputFile.WriteLine($"{streak}\n{badgeCount}");
-            // Next lines are the serving requirements for each food group
+            // Next 5 lines are the serving requirements for each food group
             foreach (FoodGroup foodGroup in foodList)
             {
                 outputFile.WriteLine(foodGroup.GetMinServings());
             }
+            // Lines 9-13 are the consumed servings
             foreach (FoodGroup foodGroup in foodList)
             {
                 outputFile.WriteLine(foodGroup.GetConsumedServings());
             }
+            // Lines 14-16 keep track of whether the bonuses have been completed
+            foreach (int bonus in bonusList)
+            {
+                outputFile.WriteLine(bonus);
+            }
         }
     }
-    public int[] LoadProgress(string filename, FoodGroup[] foodList)
+    public int[] LoadProgress(FoodGroup[] foodList)
     {
         // load the file into an array
-        string[] lines = System.IO.File.ReadAllLines(filename);
+        string[] lines = System.IO.File.ReadAllLines(_filename);
         string date = lines[0];
         int streak = Int32.Parse(lines[1]);
         int badgeCount = Int32.Parse(lines[2]);
@@ -57,7 +63,7 @@ class Menu
         // if the file is from earlier today, load the consumed servings so far too. 
         if (DateTime.Now.ToString("MM/dd/yyyy") == date)
         {
-           for (int i = 8; i < 13; i++ )
+           for (int i = 8; i < 13; i++)
             {
                 foodList[i-8].SetConsumedServings(Int32.Parse(lines[i]));
             } 
@@ -65,6 +71,9 @@ class Menu
         {
             streak ++;
         }
-        return [streak, badgeCount];
+        int fruitsAndVeggiesBonus = Int32.Parse(lines[13]);
+        int grainBonus = Int32.Parse(lines[14]);
+        int proteinBonus = Int32.Parse(lines[15]);
+        return [streak, badgeCount, fruitsAndVeggiesBonus, grainBonus, proteinBonus];
     }
 }
